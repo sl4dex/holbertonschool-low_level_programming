@@ -18,19 +18,19 @@ int main(void)
 				{
 					if (l > j && k >= i)
 					{
-						putchar(i + '0');
-						putchar(j + '0');
-						putchar(' ');
-						putchar(k + '0');
-						putchar(l + '0');
-						if (i == 9 && j == 8 && k == 9 && l == 9)
-						{
-						}
-						else
-						{
-							putchar(',');
-							putchar(' ');
-						}
+					putchar(i + '0');
+					putchar(j + '0');
+					putchar(' ');
+					putchar(k + '0');
+					putchar(l + '0');
+					if (i == 9 && j == 8 && k == 9 && l == 9)
+					{
+					}
+					else
+					{
+					putchar(',');
+					putchar(' ');
+					}
 					}
 				}
 			}
