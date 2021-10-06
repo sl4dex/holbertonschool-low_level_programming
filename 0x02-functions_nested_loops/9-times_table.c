@@ -23,11 +23,19 @@ void times_table(void)
 				_putchar('0' + i);
 				_putchar('0' + j);
 			}
-			if (row != 9)
+			if (row == 9)
 			{
 				_putchar(',');
 				_putchar(' ');
 			}
+			if (col <= 1)
+			{
+				_putchar(',');
+				_putchar('  ');
+			}
+			if (col <= 1)
+			
+
 		}
 		_putchar('\n');
 	}
