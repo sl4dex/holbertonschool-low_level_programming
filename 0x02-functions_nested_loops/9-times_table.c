@@ -15,6 +15,12 @@ void times_table(void)
 			if (result <= 9)
 			{
 				_putchar('0' + result);
+				if (row < 9)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+				}
 			}
 			else
 			{
@@ -22,20 +28,12 @@ void times_table(void)
 				j = result % 10;
 				_putchar('0' + i);
 				_putchar('0' + j);
+				if (row < 9)
+				{
+					_putchar(',');
+					_putchar(' ');
+				}
 			}
-			if (row == 9)
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
-			if (col <= 1)
-			{
-				_putchar(',');
-				_putchar('  ');
-			}
-			if (col <= 1)
-			
-
 		}
 		_putchar('\n');
 	}
