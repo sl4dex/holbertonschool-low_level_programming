@@ -7,9 +7,7 @@
 int print_last_digit(int n)
 {
 	int lastd;
-	int truquito = 0;
 
 	lastd = n % 10;
-	truquito = lastd * 10 + lastd;
-	return (truquito);
+	return (lastd);
 }
