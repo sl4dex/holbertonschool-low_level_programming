@@ -7,9 +7,6 @@
  */
 int main(void)
 {
-	print_last_digit(1234);
-	print_last_digit(22);
-	_putchar(-8);
-	_putchar('\n');
+    jack_bauer();
     return (0);
 }
