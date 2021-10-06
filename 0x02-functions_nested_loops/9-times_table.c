@@ -14,24 +14,27 @@ void times_table(void)
 			result = row * col;
 			if (result <= 9)
 			{
+				if (row >= 1)
+				{
+					_putchar(' ');
+					_putchar(' ');
+				}
 				_putchar('0' + result);
 				if (row < 9)
 				{
 					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
 				}
 			}
 			else
 			{
 				i = result / 10;
 				j = result % 10;
+				_putchar(' ');
 				_putchar('0' + i);
 				_putchar('0' + j);
 				if (row < 9)
 				{
 					_putchar(',');
-					_putchar(' ');
 				}
 			}
 		}
