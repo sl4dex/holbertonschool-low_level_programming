@@ -18,10 +18,9 @@ void print_diagonal(int n)
 			for (i = 1; i <= row; i++)
 			{
 				if (i == row)
-				{
 					_putchar('\\');
-				}
-				_putchar(' ');
+				else
+					_putchar(' ');
 			}
 			_putchar(10);
 		}
