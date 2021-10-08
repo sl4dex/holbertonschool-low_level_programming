@@ -1,27 +1,15 @@
 #include <stdio.h>
-#include <math.h>
 
 int main() {
-	long int num, maxF, i;
+	long int num, div;
 	num = 612852475143;
-
 	
-	while(num % 2 == 0)
+	while(div < num)
 	{
-		num = num / 2;
-		maxF = 2;
+		for (div = 2; div < num; div++)
+			if (num % div == 0)
+				num = num / div;
 	}
-	if (num % 3 == 0)
-	{
-		for(i = 3; i <= sqrt(num); i++)
-			{
-				if (num % i == 0)
-				{
-				num = num / i;
-				maxF = i;
-				}
-			}
-			printf("%ld\n", maxF);
-   	}
+	printf("%ld\n", num);
 	return 0;
 }
