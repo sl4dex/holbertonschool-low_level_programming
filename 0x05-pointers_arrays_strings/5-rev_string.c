@@ -6,18 +6,25 @@
 */
 void rev_string(char *s)
 {
-	int i, j;
+	int size, last;
+	char aux;
 
-	for (i = 0; s[i] != 0; i++)
+	for (size = 0; s[size] != 0; size++)
 	{
 	}
-	_putchar(10);
-	i -= 1;
-	for (j = i; j >= 0; j--)
+	size = size - 1;
+	for (last = size; last >= 0; last--)
 	{
-		*(s + j) = *(s + (i - j));
-		_putchar(*(s + j));
+		if (last == size / 2)
+		{
+			break;
+		}
+		else
+		{
+		aux = *(s + (size - last));
+		*(s + (size - last)) = *(s + last);
+		*(s + last) = aux;
+		}
 	}
-	_putchar(10);
 }
 
