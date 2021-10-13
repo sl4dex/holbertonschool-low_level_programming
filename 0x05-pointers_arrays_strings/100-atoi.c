@@ -19,12 +19,12 @@ int _atoi(char *s)
 		{
 			/* add it to the en of num */
 			num = (num * 10) + (s[pos] - 48);
-			/* if the next position is not a number, stop */
-			if ((*(s + pos + 1) < 48) || (*(s + pos + 1) > 57))
-				break;
 			/* if previous position was a "-", remember */
 			if (*(s + pos - 1) == '-')
 				negative = 1;
+			/* if the next position is not a number, stop */
+			if ((*(s + pos + 1) < 48) || (*(s + pos + 1) > 57))
+				break;
 		}
 	}
 	if (negative == 1)
