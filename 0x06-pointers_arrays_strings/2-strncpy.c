@@ -16,5 +16,5 @@ char *_strncpy(char *dest, char *src, int n)
 		/* fill with \0 until n */
 		*(dest + pos) = 0;
 	}
-	return(dest);
+	return (dest);
 }
