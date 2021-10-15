@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * *_strncpy - 
+ * *_strncpy - concatenates two strings until n
  * @dest: string destination
  * @src: string to be concatenated
  * @n: resulting string size
