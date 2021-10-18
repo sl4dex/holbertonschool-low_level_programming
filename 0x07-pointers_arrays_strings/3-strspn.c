@@ -18,8 +18,12 @@ unsigned int _strspn(char *s, char *accept)
 		for (pos = 0; s[pos] != 0; pos++)
 		{
 			if (s[pos] == accept[letter])
+			{
 				counter++;
+				break;
+			}
 		}
 	}
+	counter++;
 	return (counter);
 }
