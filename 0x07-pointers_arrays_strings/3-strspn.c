@@ -24,6 +24,8 @@ unsigned int _strspn(char *s, char *accept)
 			}
 		}
 	}
-	counter++;
+	/* if end of text == end of letters == 0 */
+	if ((s[pos] == accept[letter]) == 0)
+		counter++;
 	return (counter);
 }
