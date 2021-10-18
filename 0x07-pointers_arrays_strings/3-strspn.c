@@ -8,14 +8,17 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int counter;
-	int letter, pos;
+	int letter, pos, i;
 
-	 counter = 0;
-	/* for every letter in accept string */
-	for (letter = 0; accept[letter] != 0; letter++)
+	counter = 0;
+
+	for (i = 0; accept[i] != 0; i++)
 	{
-		/* check if it matches with any letter of s string */
-		for (pos = 0; s[pos] != 0; pos++)
+	}
+	for (pos = 0; s[pos] != 0; pos++)
+	{
+		/* for every letter in accept string */
+		for (letter = 0; accept[letter] != 0; letter++)
 		{
 			if (s[pos] == accept[letter])
 			{
@@ -23,9 +26,8 @@ unsigned int _strspn(char *s, char *accept)
 				break;
 			}
 		}
+		if (letter == i)
+			break;
 	}
-	/* if end of text == end of letters == 0 */
-	if ((s[pos] == accept[letter]) == 0)
-		counter++;
 	return (counter);
 }
