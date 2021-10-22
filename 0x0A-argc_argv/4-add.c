@@ -10,8 +10,6 @@ int main(int argc, char *argv[])
 {
 	int i, j, sum1, sum2;
 
-	if (argc < 2)
-		return (0);
 	/*for each argument starting from 1*/
 	for (i = 1; i < argc; i++)
 	{
