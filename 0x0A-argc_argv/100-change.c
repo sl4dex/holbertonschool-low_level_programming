@@ -23,28 +23,22 @@ int main(int argc, char *argv[])
 		num = atoi(argv[1]);
 		i = 0;
 		counter = 0;
-		while (num || i != 4)
+		if (num % coin[i] == 0)
 		{
-			if (num % coin[i] == 0)
-			{
-				printf("num %d / coin %d = %d\n", num, coin[i], num / coin[i]);
-				counter++;
-				num -= coin[i];
-			}
-			else if (num / coin[i] > 0)
-			{
-				printf("num %d / coin %d = %d\n", num, coin[i], num / coin[i]);
-				counter++;
-				num -= coin[i];
-				i++;
-			}
-			else
-			{
-				printf("num %d / coin %d = %d\n", num, coin[i], num / coin[i]);
-				i++;
-			}
+			counter++;
+			num -= coin[i];
 		}
-		printf("%d\n", counter);
+		else if (num / coin[i] > 0)
+		{
+			counter++;
+			num -= coin[i];
+			i++;
+		}
+		else
+		{
+			i++;
+		}
 	}
+	printf("%d\n", counter);
 	return (0);
 }
