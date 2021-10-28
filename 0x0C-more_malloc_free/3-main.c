@@ -42,6 +42,10 @@ int main(void)
 
     a = array_range(0, 10);
     simple_print_buffer(a, 11);
+    a = array_range(2, 2);
+    simple_print_buffer(a, 1);
+    a = array_range(-30, -25);
+    simple_print_buffer(a, 6);
     free(a);
     return (0);
 }
