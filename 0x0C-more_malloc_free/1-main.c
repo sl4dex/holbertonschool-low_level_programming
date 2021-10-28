@@ -15,9 +15,9 @@ int main(void)
     char *d;
     char *e;
 
-    a = string_nconcat("Best ", "School!!!", 6);
+    a = string_nconcat("Best", "School!!!", 6);
     printf("%s\n\n", a);
-    b = string_nconcat("", "School!!!", 6);
+    b = string_nconcat("", "School!!!", 5);
     printf("%s\n\n", b);
     c = string_nconcat("Best", "", 5);
     printf("%s\n\n", c);
