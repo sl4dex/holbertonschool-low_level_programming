@@ -15,7 +15,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (s1 == NULL && s2 == NULL)
 	{
-		p = malloc(0);
+		s1 = "";
+		s2 = "";
+		p = malloc(1);
+		p[0] = 0;
 		return (p);
 	}
 	if (s1 == NULL)
