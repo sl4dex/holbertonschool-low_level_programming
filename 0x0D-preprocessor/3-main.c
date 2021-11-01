@@ -9,11 +9,11 @@
  */
 int main(void)
 {
-    int i;
-    int j;
+    int i, j ,k;
 
     i = ABS(-98) * 10;
     j = ABS(98) * 10;
-    printf("%d, %d\n", i, j);
+    k = ABS(0);
+    printf("%d, %d\n %d\n", i, j, k);
     return (0);
 }
