@@ -41,7 +41,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 				}
 			}
 		}
-		_putchar(10);
 		va_end(ptr);
 	}
+	_putchar(10);
 }
