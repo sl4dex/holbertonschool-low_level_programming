@@ -18,7 +18,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	new_tail->str = strdup(str);
 	new_tail->len = strlen(str);
 	new_tail->next = NULL;
-	if (!head)
+	if (!(head && str))
 		return (new_tail);
 	else if (!(*head))
 	{
