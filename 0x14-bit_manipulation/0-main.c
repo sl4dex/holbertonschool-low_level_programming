@@ -10,6 +10,10 @@ int main(void)
 {
     unsigned int n;
 
+    n = binary_to_uint("00");
+    printf("%u\n", n);
+    n = binary_to_uint("0");
+    printf("%u\n", n);
     n = binary_to_uint("1");
     printf("%u\n", n);
     n = binary_to_uint("101");
