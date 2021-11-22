@@ -10,7 +10,7 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int file_descriptor, err;
+	int file_descriptor, out;
 	char *buf;
 
 	if (!filename)
@@ -23,13 +23,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (file_descriptor == -1)
 		return (0);
 
-	err = read(file_descriptor, buf, letters);
-	if (err == -1)
+	out = read(file_descriptor, buf, letters);
+	if (out == -1)
 		return (0);
-	err = write(1, buf, letters);
-	if (err == -1)
+	out = write(1, buf, out);
+	if (out == -1)
 		return (0);
 	free(buf);
 	close(file_descriptor);
-	return (err);
+	return (out);
 }
