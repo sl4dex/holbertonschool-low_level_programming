@@ -21,14 +21,21 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	file_descriptor = open(filename, O_RDONLY);
 	if (file_descriptor == -1)
+	{
+		free(buf);
 		return (0);
-
+	}
 	out = read(file_descriptor, buf, letters);
 	if (out == -1)
+	{	free(buf);
 		return (0);
+	}
 	out = write(1, buf, out);
 	if (out == -1)
+	{
+		free(buf);
 		return (0);
+	}
 	free(buf);
 	close(file_descriptor);
 	return (out);
