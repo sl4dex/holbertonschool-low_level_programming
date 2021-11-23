@@ -8,36 +8,42 @@
  */
 int main(int argc, char *argv[])
 {
-	int fd1, fd2, outr;
+	int fd1, fd2, outr, outw;
 	char buf[1024];
 
+	outw = 1;
 	if (argc != 3)
 		exit(97);
-	fd1 = open(argv[1], O_TRUNC | O_RDWR);
+	fd1 = open(argv[1], O_RDONLY);
 	if (fd1 == -1)
-	{
-		printf("Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
-	fd2 = open(argv[2], O_CREAT | O_RDWR, 664);
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]), exit(98);
+	fd2 = open(argv[2], O_CREAT | O_TRUNC | O_RDWR, 0664);
 	if (fd2 == -1)
+		dprintf(2, "Error: Can't write to %s\n", argv[2]), exit(99);
+	outr = read(fd1, buf, 1024);
+	while (outr == 1024 && outw != -1)
 	{
-		printf("Error: Can't read from file %s\n", argv[2]);
+		outw = write(fd2, buf, outr);
+		if (outw == -1)
+		{
+			dprintf(2, "Error: Can't write to %s\n", argv[1]);
+			exit(99);
+		}
+		outr = read(fd1, buf, 1024);
+	}
+	outw = write(fd2, buf, outr);
+	if (outw == -1)
+		dprintf(2, "Error: Can't write to %s\n", argv[1]), exit(99);
+	if (outr == -1)
+	{
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]), exit(98);
 		exit(99);
 	}
-	outr = read(fd1, buf, 1024);
-	write(fd2, buf, outr);
 	close(fd1);
 	if (fd1 == -1)
-	{
-		printf("Error: Can't close the %d\n", fd1);
-		exit(100);
-	}
+		dprintf(2, "Error: Can't close the %d\n", fd1), exit(100);
 	close(fd2);
 	if (fd1 == -1)
-	{
-		printf("Error: Can't close the %d\n", fd2);
-		exit(100);
-	}
+		dprintf(2, "Error: Can't close the %d\n", fd2), exit(100);
 	return (0);
 }
