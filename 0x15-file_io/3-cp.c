@@ -8,7 +8,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int fd1, fd2, outr, outw;
+	int fd1, fd2, outr, outw, c1, c2;
 	char buf[1024];
 
 	outw = 1;
@@ -39,11 +39,11 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
 		exit(99);
 	}
-	close(fd1);
-	if (fd1 == -1)
+	c1 = close(fd1);
+	if (c1 == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close the %d\n", fd1), exit(100);
-	close(fd2);
-	if (fd1 == -1)
+	c2 =close(fd2);
+	if (c2 == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close the %d\n", fd2), exit(100);
 	return (0);
 }
