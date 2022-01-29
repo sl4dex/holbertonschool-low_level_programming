@@ -7,8 +7,9 @@
  */
 unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
-	unsigned long int idx = hash_djb2(
-	(const unsigned char *)strdup((const char *)key)) % size;
+	const unsigned char *k = (const unsigned char *)strdup((const char *)key);
+	unsigned long int idx = hash_djb2(k) % size;
 
+	free((void *)k);
 	return (idx);
 }
